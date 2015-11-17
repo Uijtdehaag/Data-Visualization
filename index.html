@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no"/>
+    <title>Data Visualization</title>
+    <link rel="stylesheet" href="//js.arcgis.com/3.15/esri/css/esri.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="//js.arcgis.com/3.15compact/"></script>
+    <script>
+      require(["esri/map", "esri/layers/FeatureLayer", "dojo/domReady!"], function(Map, FeatureLayer) {
+       
+          var map = new Map("map", {
+          basemap: "gray",
+          center: [7, 52],
+          zoom: 5
+        });
+          
+        var url = "//services1.arcgis.com/d86S8kH38J1KwMPi/ArcGIS/rest/services/airports/FeatureServer/0"
+        
+        var layer = new FeatureLayer(url);
+          
+        map.addLayer(layer);
+      });
+    </script>
+  </head>
+  <body>
+    <div id="map"></div>
+  </body>
+</html>
+        

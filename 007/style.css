@@ -1,0 +1,290 @@
+@import url('http://fonts.googleapis.com/css?family=Muli:400,300');
+
+html, body {
+	height: 100%; 
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	background-color: #222327;
+}
+
+html {
+    line-height: 1.5;
+    font-family: "Roboto", sans-serif;
+    font-weight: normal;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+#wrapper {
+	width: 100%; 
+	height: 100%; 
+	margin: 0;
+	position: relative;
+}
+
+#map{
+	padding:0; 
+	z-index:1; 
+	position:absolute;
+}
+
+#HomeButton {
+	position: absolute;
+	top: 95px;
+	left: 20px;
+	z-index: 50;
+}
+
+#clock,
+#replay {
+	z-index: 12; 
+	position:absolute;
+	bottom: 20px;
+	left: 20px;
+}
+
+#clock{
+	color: #02BCFD;
+	font-size: 4em;
+    display: none!important;
+}
+
+#loader {
+	z-index: 12; 
+	position: absolute;
+	left: 50%;
+    margin-left: -28px;
+    top: 50%;
+    margin-top: -13px;
+	color: #fff;
+}
+
+#loader .ball-pulse > div {
+	width: 12px;
+    height: 12px;
+    background-color: #FF0011;
+}
+
+#play {
+	z-index: 12; 
+	position: absolute;
+	left: 50%;
+    margin-left: -53px;
+    top: 50%;
+    margin-top: -24px;
+}
+
+#loader,
+body.loading #play {
+	display: none;
+}
+
+body.loading #loader,
+#play {
+	display: block;
+}
+
+/* buttons */
+.btn,
+.btn-large,
+.btn-flat {
+    border: none;
+    border-radius: 2px;
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    outline: 0;
+    padding: 0 2rem;
+    text-transform: uppercase;
+    vertical-align: middle;
+    -webkit-tap-highlight-color: transparent;
+}
+.btn.disabled,
+.disabled.btn-large,
+.btn-floating.disabled,
+.btn-large.disabled,
+.btn:disabled,
+.btn-large:disabled,
+.btn-large:disabled,
+.btn-floating:disabled {
+    background-color: #DFDFDF !important;
+    box-shadow: none;
+    color: #9F9F9F !important;
+    cursor: default;
+}
+.btn.disabled *,
+.disabled.btn-large *,
+.btn-floating.disabled *,
+.btn-large.disabled *,
+.btn:disabled *,
+.btn-large:disabled *,
+.btn-large:disabled *,
+.btn-floating:disabled * {
+    pointer-events: none;
+}
+.btn.disabled:hover,
+.disabled.btn-large:hover,
+.btn-floating.disabled:hover,
+.btn-large.disabled:hover,
+.btn:disabled:hover,
+.btn-large:disabled:hover,
+.btn-large:disabled:hover,
+.btn-floating:disabled:hover {
+    background-color: #DFDFDF;
+    color: #9F9F9F;
+}
+.btn i,
+.btn-large i,
+.btn-floating i,
+.btn-large i,
+.btn-flat i {
+    font-size: 1.3rem;
+    line-height: inherit;
+}
+.btn,
+.btn-large {
+    text-decoration: none;
+    color: #fff;
+    background-color: #FF0011;
+	font-weight: bold;
+    text-align: center;
+    letter-spacing: .5px;
+    -webkit-transition: .2s ease-out;
+    -moz-transition: .2s ease-out;
+    -o-transition: .2s ease-out;
+    -ms-transition: .2s ease-out;
+    transition: .2s ease-out;
+    cursor: pointer;
+}
+
+/* CSS KEYFRAMES FOR POINTS */
+#map_graphics_layer path {
+	stroke: #FF0011;
+    stroke-width: 2px;
+	/* stroke: none; */
+}
+
+circle {
+	fill: #FF0011;
+	stroke: #FFFFFF;
+	-webkit-animation: pulsate 2s ease-out;
+	-webkit-animation-iteration-count: infinite; 
+	opacity: 0.3
+}	
+
+@-webkit-keyframes pulsate {
+	0% {
+		opacity: 0.3;
+		r: 6px;
+	}
+	25% {
+		opacity: 1.0;
+		r: 8px;
+	}
+	100% {
+		opacity: 0.3;
+		 r: 6px;
+	}
+}
+
+
+.esriSimpleSlider {
+    border: none;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+       -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+            box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+}
+
+.esriSimpleSlider {
+    top: 20px;
+}
+
+.esriSimpleSlider div {
+    font-size: 17px;
+    font-weight: bold;
+    line-height: 28px;
+}
+
+.esriSimpleSlider .esriSimpleSliderIncrementButton {
+    border-bottom: 1px solid #e4e4e4;
+}
+
+.esriSimpleSlider,
+.esriSimpleSlider .esriSimpleSliderIncrementButton,
+.esriSimpleSlider .esriSimpleSliderDecrementButton,
+.HomeButton .home {
+    border-radius: 2px;
+}
+
+.esriSimpleSlider .esriSimpleSliderIncrementButton,
+.esriSimpleSlider .esriSimpleSliderDecrementButton {
+}
+
+.esriControlsBR {
+	bottom: 20px;
+	right: 20px;
+}
+
+.esriPopup {
+	font-family: 'Open Sans', Helvetica, Arial;
+}
+
+.esriPopup .esriPopupWrapper {
+	-webkit-border-radius: 2px;
+			border-radius: 2px;
+}
+
+.esriPopup .esriPopupWrapper .titlePane {
+	padding-top: 3px;
+    padding-bottom: 3px;
+	-webkit-border-radius: 2px 2px 0 0;
+			border-radius: 2px 2px 0 0;
+}
+
+.esriPopup .esriPopupWrapper .titlePane .titleButton {
+	/* background-image: none; */
+}
+
+.esriPopup .esriPopupWrapper .titlePane .titleButton.close,
+.esriPopup .esriPopupWrapper .titlePane .titleButton.next,
+.esriPopup .esriPopupWrapper .titlePane .titleButton.prev {
+    top: 5px!important;
+}
+
+.esriPopup .esriPopupWrapper .titlePane .titleButton.maximize {
+    top: 8px!important;
+}
+
+.esriPopup .esriPopupWrapper .titlePane {
+	background-color: #FF0011;
+	color: #fff;;
+}
+
+.HomeButton .home {
+    width: 26px;
+    height: 26px;
+    background-color: #FFF;
+	background-image: url("home.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.HomeButton .home:hover {
+	background-color: #eee;
+}
+
+.titleButton.maximize {
+    display: none;
+}
+
+#map_root > div.esriPopup.esriPopupVisible > div.esriPopupWrapper > div:nth-child(3) > div > div {
+    display: none;
+}
+
+
+.esriAttribution {
+    font-size: 12px;
+    color: #B7B6B6;
+    background: rgba(253, 253, 253, 0.07);
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}

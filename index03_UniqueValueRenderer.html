@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no"/>
+    <title>Data Visualization - Definition Expression</title>
+    <link rel="stylesheet" href="//js.arcgis.com/3.14/esri/css/esri.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="//js.arcgis.com/3.14/"></script>
+    <script>
+      require([
+        "esri/map",
+        "esri/layers/FeatureLayer",
+        "esri/renderers/UniqueValueRenderer",
+        "esri/symbols/SimpleMarkerSymbol",
+        "esri/Color",
+        "dojo/domReady!"
+      ], function(Map, FeatureLayer, UniqueValueRenderer,  SimpleMarkerSymbol, Color) {
+        var map = new Map("map", {
+          basemap: "gray",
+          center: [7, 52],
+          zoom: 5
+        });
+        var url = "//services1.arcgis.com/d86S8kH38J1KwMPi/ArcGIS/rest/services/airports/FeatureServer/0"
+        var layer = new FeatureLayer(url);
+        
+        var renderer = new UniqueValueRenderer(null, "type");
+        
+        var symbol1 = new SimpleMarkerSymbol();
+        symbol1.setColor(new Color([253,127,111,0.8]));
+        symbol1.outline.setColor(new Color([255,255,255,1.0]));
+        symbol1.setSize("14");
+        renderer.addValue("large_airport", symbol1);
+        
+        var symbol2 = new SimpleMarkerSymbol();
+        symbol2.setColor(new Color([255,181,90,0.8]));
+        symbol2.outline.setColor(new Color([255,255,255,1.0]));
+        symbol2.setSize("8");
+        renderer.addValue("small_airport", symbol2);
+        
+        layer.setRenderer(renderer);
+          
+        layer.setDefinitionExpression("type = 'large_airport' or type = 'small_airport'");
+        
+        map.addLayer(layer);
+      });
+    </script>
+  </head>
+  <body>
+    <div id="map"></div>
+  </body>
+</html>

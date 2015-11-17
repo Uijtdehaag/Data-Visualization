@@ -1,0 +1,37 @@
+<!-- Original source and credits ESRI UK -->
+<!-- http://apps.esriuk.com/app/jamesbondtravelmap/3/wmt/view/15d6cb1f63b34eed84584564fbf4c017/index.html -->
+<!DOCTYPE html>
+<html> 
+	<head> 
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+		<title>James Bond Travel Map</title>
+		<link rel="stylesheet" href="http://js.arcgis.com/3.14/dijit/themes/claro/claro.css"> 
+		<link rel="stylesheet" href="http://js.arcgis.com/3.14/esri/css/esri.css">
+		<link rel="stylesheet" href="007/loaders.css">
+		<link rel="stylesheet" href="007/style.css">
+		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>    
+		<script src="//cdn.jsdelivr.net/velocity/1.2.2/velocity.min.js"></script>
+		<script src="//cdn.jsdelivr.net/velocity/1.2.2/velocity.ui.min.js"></script>
+		<script src="http://js.arcgis.com/3.14/"></script>
+		<script src="007/common.js"></script> 
+		
+	</head> 
+
+	<body class="loading"> 
+		<div id="wrapper" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design:'headline', gutters:false"> 
+			<div id="loader"class="loader">
+				<div class="loader-inner ball-pulse">
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<div id="play"><a href="#" class="play btn">Play</a></div>
+			<div id="map" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'" style="overflow: hidden; width: 950px; height: 620px; left: 0px; top: 0px; position: absolute;"></div> 
+			<div id="HomeButton"></div>
+			<div id="clock"></div>
+			<div id="replay"></div>
+		</div> 
+	</body> 
+</html>
